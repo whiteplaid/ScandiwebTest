@@ -13,24 +13,7 @@
   outline-offset: 1px;
   box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
 }
-.button-del {  
-  border-radius: 1px;
-  background-color: transparent;
-  border: 1px;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 6px;
-  transition: all 0.5s;
-  cursor: pointer;
-  outline-style: auto;
-  outline-color: rgb(192, 192, 192);
-  outline-offset: 1px;
-  box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
-  margin-left: 1%;
 
-}
 .button:hover {
   background-color: rgb(192, 192, 192);
   color: white;
@@ -38,9 +21,6 @@
 .d-flex {
   display: flex;
   flex:content;
-}
-.grid {
-  columns: 3;
 }
 .se{
   justify-content: space-evenly;
@@ -50,15 +30,6 @@
 }
 .sl {
   justify-content: flex-end;
-}
-.p2 {
-  text-decoration: none;
-  text-align: center;
-  color: black;
-  text-shadow: 1px;
-}
-.p4 {
-  justify-content: flex-start;
 }
 .p3 {
   position:fixed;
@@ -155,15 +126,6 @@ margin-top: 5%;
 }
 .border-top {
   border-top: 1px solid black;
-}
-.row {
-  grid-row: auto;
-}
-.col12 {
-  columns: 12;
-}
-.col6 {
-  columns: 6;
 }
 .text-muted {
   color: rgb(201, 204, 206);
