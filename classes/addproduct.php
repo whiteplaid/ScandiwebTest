@@ -1,5 +1,5 @@
 <?php
-class AddProduct {
+class AddProduct extends Product {
 
     private $sku;
     private $name;

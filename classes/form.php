@@ -1,5 +1,5 @@
 <?php
-class Form {
+class Form extends AbstractForm{
     private $id;
 
     function __construct($id) {
