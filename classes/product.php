@@ -62,7 +62,7 @@ abstract class Product
     {
         $this->size = $size;
     }
-    
+
     public function setProperty($property)
     {
         $this->property = $property;
