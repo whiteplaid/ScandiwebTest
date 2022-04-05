@@ -19,6 +19,7 @@ class Book extends Product
     {
         $this->weight = $weight;
     }
+    
     public function toForm()
     {
         echo "<ul class='list-unstyled'>";

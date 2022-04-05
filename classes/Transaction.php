@@ -11,11 +11,20 @@ class Transaction extends Database
         $result = $mysql->query($query);
         return $result;
     }
+
     private function check($sku, $name, $price, $size)
     {
 
         $result = ($sku == '' || $name == '' || $price == '' ||
             $size == '' || is_numeric($name) || !is_numeric($price)) ? false : true;
+        return $result;
+    }
+
+    private function checkProduct($product)
+    {
+
+        $result = ($product->getSku() == '' || $product->getName() == '' || $product->getPrice() == '' ||
+            $product->getSize() == '' || is_numeric($product->getName()) || !is_numeric($product->getPrice())) ? false : true;
         return $result;
     }
 
@@ -29,6 +38,18 @@ class Transaction extends Database
         }
 
     }
+
+    public function insertProduct($product)
+    {
+        if ($this->checkProduct($product)) {
+            $mysql = self::$conn;
+            $stmt = $mysql->prepare("INSERT INTO product (sku, name, price, size, property) VALUES (?,?,?,?,?)");
+            $stmt->bind_param("sssss", $product->getSku(), $product->getName(), $product->getPrice(), $product->getSize(), $product->getProperty());
+            $stmt->execute();
+        }
+
+    }
+    
     public function deleteRow($sku)
     {
         $mysql = self::$conn;

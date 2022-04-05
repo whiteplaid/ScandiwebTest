@@ -17,42 +17,52 @@ abstract class Product
         $this->size = $size;
         $this->property = $property;
     }
+
     public function getSku()
     {
         return $this->sku;
     }
+
     public function getName()
     {
         return $this->name;
     }
+
     public function getPrice()
     {
         return $this->price;
     }
+
     public function getSize()
     {
         return $this->size;
     }
+
     public function getProperty()
     {
         return $this->property;
     }
+
     public function setSku($sku)
     {
         $this->sku = $sku;
     }
+
     public function setName($name)
     {
         $this->name = $name;
     }
+
     public function setPrice($price)
     {
         $this->price = $price;
     }
+
     public function setSize($size)
     {
         $this->size = $size;
     }
+    
     public function setProperty($property)
     {
         $this->property = $property;

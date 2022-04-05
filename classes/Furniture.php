@@ -19,6 +19,7 @@ class Furniture extends Product
     {
         $this->dimensions = $dimensions;
     }
+    
     public function toForm()
     {
         echo "<ul class='list-unstyled'>";
