@@ -8,11 +8,13 @@
 <body>
   
 <?php
-    require __DIR__."/config.php";
-    require __DIR__."/blocks/header.php";
-    $db = new Database();
-    $o= new SelectProductList();
-    $result = $o->getProducts();
-    include('productlistform.php');
-    require __DIR__.'/blocks/footer.php';
-  ?>
+require __DIR__ . "/autoloader.php";
+require __DIR__ . "/views/header.php";
+
+$db = new Whiteplaid\Database;
+$productList = new Whiteplaid\Transaction;
+$result = $productList->getProducts();
+
+include('views/productlistform.php');
+require __DIR__ . '/views/footer.php';
+?>

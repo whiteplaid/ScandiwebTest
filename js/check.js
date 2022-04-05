@@ -1,21 +1,21 @@
-$(function() {
-    $("#sku").change(function(){
+$(function () {
+    $("#sku").change(function () {
         $("#esku").hide();
         var sku = $("#sku").val();
         $.ajax({
             type: "POST",
-            url: "checksku.php",
-            data: {sku: sku},
+            url: "/scripts/checksku",
+            data: { sku: sku },
             success: function (response) {
                 if (response != '') {
-                $("#esku").show();
-                $("#esku").html("The database is already have " + response);
+                    $("#esku").show();
+                    $("#esku").html("The database is already have " + response);
                 }
             }
         })
         return false;
     })
-    $("#name").change(function(){
+    $("#name").change(function () {
         var isNumName = !isNaN($("#name").val());
         if (isNumName) {
             $("#ename").show();
@@ -24,7 +24,7 @@ $(function() {
             $("#ename").hide();
         }
     })
-    $("#price").change(function(){
+    $("#price").change(function () {
         var isNumPrice = isNaN($("#price").val());
         if (isNumPrice) {
             $("#eprice").show();
@@ -34,17 +34,17 @@ $(function() {
         }
     })
 
-    $("#productType").change(function(){
+    $("#productType").change(function () {
         var name = $('#productType').val();
-        $.ajax ({
+        $.ajax({
             type: 'post',
-            url: '/result',
-            data: {id: name},
-            success: function(response) {
-                $('#dynamic').html(response);     
+            url: '/scripts/result',
+            data: { id: name },
+            success: function (response) {
+                $('#dynamic').html(response);
             }
         })
 
     })
-    
+
 })

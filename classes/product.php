@@ -1,40 +1,61 @@
 <?php
-class Product {
-    private $sku = null;
-    private $name = null;
-    private $price = null;
-    private $size = null;
-    private $property = null;
+namespace Whiteplaid;
+abstract class Product
+{
+    private $sku;
+    private $name;
+    private $price;
+    private $size;
+    private $property;
 
 
-
-
-    function getSku () {
+    public function __construct($sku, $name, $price, $size, $property)
+    {
+        $this->sku = $sku;
+        $this->name = $name;
+        $this->price = $price;
+        $this->size = $size;
+        $this->property = $property;
+    }
+    public function getSku()
+    {
         return $this->sku;
     }
-    function getName () {
+    public function getName()
+    {
         return $this->name;
     }
-    function getPrice () {
+    public function getPrice()
+    {
         return $this->price;
     }
-    function getSize () {
+    public function getSize()
+    {
         return $this->size;
     }
-    function getProperty () {
+    public function getProperty()
+    {
         return $this->property;
     }
-    function setSku ($sku) {
-        $this->sku=$sku;
+    public function setSku($sku)
+    {
+        $this->sku = $sku;
     }
-    function setName ($name) {
-        $this->name=$name;
+    public function setName($name)
+    {
+        $this->name = $name;
     }
-    function setPrice ($price) {
-        $this->price=$price;
+    public function setPrice($price)
+    {
+        $this->price = $price;
     }
-    function setPropert ($property) {
-        $this->property=$property;
+    public function setSize($size)
+    {
+        $this->size = $size;
+    }
+    public function setProperty($property)
+    {
+        $this->property = $property;
     }
 }
 ?>

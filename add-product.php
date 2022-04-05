@@ -1,15 +1,15 @@
-<link rel="stylesheet" href="css\style.css">
+<link rel="stylesheet" href="/css/style.css">
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="js/check.js"></script>
-<script src="js/t.js"></script>
+<script src="js/add.js"></script>
 <title>Product Add</title>
 <nav class="d-flex card-header">
   <h3 class="my-0 ml4">Product Add</h5>
 </nav>
-<form id="product_form" action="/i">
+<form id="product_form" action="/scripts/i">
 <table>
         <tr class = 'p34'>
-        <td class="b"><button type='submit'  class='button' id='save-product-btn' name='Save' value='Save' onclick='t()'>SAVE</button></td>
+        <td class="b"><button type='submit'  class='button' id='save-product-btn' name='Save' value='Save' onclick='add()'>SAVE</button></td>
         <td class="b"><button type='button' class='button' name="CANCEL" onclick="window.location.href='/'">CANCEL</button></td>
         </tr>
     </table>
@@ -27,9 +27,9 @@
         
                 <select name="pid" id="productType">
                 <option value="default">Select type of product</option>
-                <option value="1">DVD</option>
-                <option value="2">Book</option>
-                <option value="3">Furniture</option>       
+                <option value="DVD">DVD</option>
+                <option value="Book">Book</option>
+                <option value="Furniture">Furniture</option>       
                 </select>
             </td>
         </tr>
@@ -41,4 +41,4 @@
 
 
 
-<?php require __DIR__.'/blocks/footer.php'?>
+<?php require __DIR__ . '/views/footer.php'?>
