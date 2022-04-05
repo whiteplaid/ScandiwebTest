@@ -6,7 +6,7 @@
 <nav class="d-flex card-header">
   <h3 class="my-0 ml4">Product Add</h5>
 </nav>
-<form id="product_form" action="/scripts/i">
+<form id="product_form" action="/scripts/toIndex">
 <table>
         <tr class = 'p34'>
         <td class="b"><button type='submit'  class='button' id='save-product-btn' name='Save' value='Save' onclick='add()'>SAVE</button></td>
