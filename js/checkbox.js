@@ -1,8 +1,8 @@
 $(function () {
-    $('#add-product').on('click', function(e){
-        window.location.href='/add-product';
+    $('#add-product').on('click', function (e) {
+        window.location.href = '/add-product';
     })
-    $('#checkbox').on('submit', function (e) {     
+    $('#checkbox').on('submit', function (e) {
         if (document.querySelector('.delete-checkbox') == null) {
             e.preventDefault();
         }

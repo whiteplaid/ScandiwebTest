@@ -9,7 +9,7 @@ function add() {
         $.ajax({
             type: 'POST',
             url: '/scripts/saveproduct',
-            data: { sku: sku, name: name, price: price, size: size, property: property },
+            data: {sku: sku, name: name, price: price, size: size, property: property},
             success: function (response) {
             }
         })

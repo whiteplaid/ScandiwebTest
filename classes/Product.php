@@ -1,5 +1,6 @@
 <?php
 namespace Whiteplaid;
+
 abstract class Product
 {
     private $sku;
@@ -23,29 +24,14 @@ abstract class Product
         return $this->sku;
     }
 
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    public function getSize()
-    {
-        return $this->size;
-    }
-
-    public function getProperty()
-    {
-        return $this->property;
-    }
-
     public function setSku($sku)
     {
         $this->sku = $sku;
+    }
+
+    public function getName()
+    {
+        return $this->name;
     }
 
     public function setName($name)
@@ -53,9 +39,19 @@ abstract class Product
         $this->name = $name;
     }
 
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
     public function setPrice($price)
     {
         $this->price = $price;
+    }
+
+    public function getSize()
+    {
+        return $this->size;
     }
 
     public function setSize($size)
@@ -63,9 +59,13 @@ abstract class Product
         $this->size = $size;
     }
 
+    public function getProperty()
+    {
+        return $this->property;
+    }
+
     public function setProperty($property)
     {
         $this->property = $property;
     }
 }
-?>

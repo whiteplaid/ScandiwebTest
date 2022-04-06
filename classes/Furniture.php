@@ -1,4 +1,5 @@
 <?php
+
 namespace Whiteplaid;
 
 class Furniture extends Product
@@ -10,16 +11,6 @@ class Furniture extends Product
     {
     }
 
-    public function getDimensions()
-    {
-        return $this->getSize();
-    }
-
-    public function setDimensions($dimensions)
-    {
-        $this->dimensions = $dimensions;
-    }
-    
     public function toForm()
     {
         echo "<ul class='list-unstyled'>";
@@ -38,5 +29,14 @@ class Furniture extends Product
         echo "</ul>";
         echo "</div></td>";
     }
+
+    public function getDimensions()
+    {
+        return $this->getSize();
+    }
+
+    public function setDimensions($dimensions)
+    {
+        $this->dimensions = $dimensions;
+    }
 }
-?>

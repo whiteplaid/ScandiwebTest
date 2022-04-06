@@ -1,5 +1,6 @@
 <?php
 namespace Whiteplaid;
+
 class Form
 {
 
@@ -7,7 +8,7 @@ class Form
     {
         $this->$id();
     }
-    
+
     private function DVD()
     {
 
@@ -44,4 +45,3 @@ class Form
             </table>";
     }
 }
-?>

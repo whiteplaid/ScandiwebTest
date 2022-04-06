@@ -6,4 +6,3 @@ foreach ($_POST['sku'] as $sku) {
 }
 
 header('Location: /');
-?>

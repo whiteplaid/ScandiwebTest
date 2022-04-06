@@ -1,4 +1,5 @@
 <?php
+
 namespace Whiteplaid;
 
 class Transaction extends Database
@@ -12,22 +13,6 @@ class Transaction extends Database
         return $result;
     }
 
-    private function check($sku, $name, $price, $size)
-    {
-
-        $result = ($sku == '' || $name == '' || $price == '' ||
-            $size == '' || is_numeric($name) || !is_numeric($price)) ? false : true;
-        return $result;
-    }
-
-    private function checkProduct($product)
-    {
-
-        $result = ($product->getSku() == '' || $product->getName() == '' || $product->getPrice() == '' ||
-            $product->getSize() == '' || is_numeric($product->getName()) || !is_numeric($product->getPrice())) ? false : true;
-        return $result;
-    }
-
     public function insert($sku, $name, $price, $size, $property)
     {
         if ($this->check($sku, $name, $price, $size)) {
@@ -36,7 +21,12 @@ class Transaction extends Database
             $stmt->bind_param("sssss", $sku, $name, $price, $size, $property);
             $stmt->execute();
         }
+    }
 
+    private function check($sku, $name, $price, $size)
+    {
+        return  !(($sku == '' || $name == '' || $price == '' ||
+            $size == '' || is_numeric($name) || !is_numeric($price)));
     }
 
     public function insertProduct($product)
@@ -47,15 +37,18 @@ class Transaction extends Database
             $stmt->bind_param("sssss", $product->getSku(), $product->getName(), $product->getPrice(), $product->getSize(), $product->getProperty());
             $stmt->execute();
         }
-
     }
-    
+
+    private function checkProduct($product)
+    {
+        return !(($product->getSku() == '' || $product->getName() == '' || $product->getPrice() == '' ||
+            $product->getSize() == '' || is_numeric($product->getName()) || !is_numeric($product->getPrice())));
+    }
+
     public function deleteRow($sku)
     {
         $mysql = self::$conn;
         $query = "DELETE FROM product WHERE sku='$sku'";
-        $result = $mysql->query($query);
-        return $result;
+        return $mysql->query($query);
     }
 }
-?>

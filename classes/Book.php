@@ -1,4 +1,5 @@
 <?php
+
 namespace Whiteplaid;
 
 class Book extends Product
@@ -10,16 +11,6 @@ class Book extends Product
     {
     }
 
-    public function getWeight()
-    {
-        return $this->getSize();
-    }
-
-    public function setWeight($weight)
-    {
-        $this->weight = $weight;
-    }
-    
     public function toForm()
     {
         echo "<ul class='list-unstyled'>";
@@ -38,5 +29,14 @@ class Book extends Product
         echo "</ul>";
         echo "</div></td>";
     }
+
+    public function getWeight()
+    {
+        return $this->getSize();
+    }
+
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+    }
 }
-?>

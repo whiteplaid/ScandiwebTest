@@ -5,7 +5,7 @@ $(function () {
         $.ajax({
             type: "POST",
             url: "/scripts/checksku",
-            data: { sku: sku },
+            data: {sku: sku},
             success: function (response) {
                 if (response != '') {
                     $("#esku").show();
@@ -39,7 +39,7 @@ $(function () {
         $.ajax({
             type: 'post',
             url: '/scripts/result',
-            data: { id: name },
+            data: {id: name},
             success: function (response) {
                 $('#dynamic').html(response);
             }

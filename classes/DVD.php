@@ -1,4 +1,5 @@
 <?php
+
 namespace Whiteplaid;
 
 
@@ -29,4 +30,3 @@ class DVD extends Product
         echo "</div></td>";
     }
 }
-?>
