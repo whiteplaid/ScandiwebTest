@@ -4,7 +4,6 @@ namespace Whiteplaid;
 
 class Book extends Product
 {
-
     private $weight;
 
     public function __construct()

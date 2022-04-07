@@ -4,13 +4,11 @@ namespace Whiteplaid;
 
 class Transaction extends Database
 {
-
     public function getProducts()
     {
         $mysql = self::$conn;
         $query = "SELECT * FROM product ORDER BY sku";
-        $result = $mysql->query($query);
-        return $result;
+        return $mysql->query($query);
     }
 
     public function insert($sku, $name, $price, $size, $property)
@@ -25,7 +23,7 @@ class Transaction extends Database
 
     private function check($sku, $name, $price, $size)
     {
-        return  !(($sku == '' || $name == '' || $price == '' ||
+        return !(($sku == '' || $name == '' || $price == '' ||
             $size == '' || is_numeric($name) || !is_numeric($price)));
     }
 

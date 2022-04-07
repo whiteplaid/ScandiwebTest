@@ -29,5 +29,4 @@ class Database
         $r = ($result == null) ? '' : $result->sku;
         return print_r($r);
     }
-
 }

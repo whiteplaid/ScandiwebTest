@@ -1,5 +1,5 @@
 function add() {
-    $("#product_form").on('submit', function (e) {
+    $("#product_form").on('submit', function () {
         var sku = $('#sku').val();
         var name = $('#name').val();
         var price = $('#price').val();
@@ -8,10 +8,8 @@ function add() {
 
         $.ajax({
             type: 'POST',
-            url: '/scripts/saveproduct',
-            data: {sku: sku, name: name, price: price, size: size, property: property},
-            success: function (response) {
-            }
+            url: '/scripts/saveProduct',
+            data: {sku: sku, name: name, price: price, size: size, property: property}
         })
 
     })

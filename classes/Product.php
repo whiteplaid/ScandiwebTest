@@ -1,4 +1,5 @@
 <?php
+
 namespace Whiteplaid;
 
 abstract class Product

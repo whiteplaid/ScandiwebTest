@@ -1,5 +1,5 @@
 <script src="https://code.jquery.com/jquery-latest.js"></script>
-<script src="js/checkbox.js"></script>
+<script src="/js/checkbox.js"></script>
 <form class='checkbox' id='checkbox' action='/scripts/checkbox' method='POST'>
 
     <table>

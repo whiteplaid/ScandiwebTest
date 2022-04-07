@@ -1,9 +1,9 @@
 <?php
+
 namespace Whiteplaid;
 
 class Form
 {
-
     public function createForm($id)
     {
         $this->$id();
@@ -11,7 +11,6 @@ class Form
 
     private function DVD()
     {
-
         echo "<table class='card mt5 ml4'>
               <tr><td>Size (MB):</td><td><input type='text' id='size'></td></tr>
               <tr><td></td><td><div id='msize'></div></td></tr>

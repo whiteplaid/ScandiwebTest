@@ -2,13 +2,10 @@
 
 namespace Whiteplaid;
 
-
 class DVD extends Product
 {
-
     public function __construct()
     {
-
     }
 
     public function toForm()

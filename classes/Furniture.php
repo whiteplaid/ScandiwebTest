@@ -4,7 +4,6 @@ namespace Whiteplaid;
 
 class Furniture extends Product
 {
-
     private $dimensions;
 
     public function __construct()

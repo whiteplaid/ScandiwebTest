@@ -4,10 +4,10 @@ $(function () {
         var sku = $("#sku").val();
         $.ajax({
             type: "POST",
-            url: "/scripts/checksku",
+            url: "/scripts/checkSku",
             data: {sku: sku},
             success: function (response) {
-                if (response != '') {
+                if (response !== '') {
                     $("#esku").show();
                     $("#esku").html("The database is already have " + response);
                 }

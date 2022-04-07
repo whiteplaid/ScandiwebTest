@@ -4,7 +4,6 @@ namespace Whiteplaid;
 
 class Objects
 {
-
     public static $objects;
 
     public function __construct(array $objects = array())
@@ -20,13 +19,8 @@ class Objects
     public static function addObject($sku, $name, $price, $size, $property)
     {
         $products = array();
-        $arrayObj = array(
-            "DVD" => new DVD,
-            "Book" => new Book,
-            "Furniture" => new Furniture
-        );
-
-        $object = $arrayObj[$property];
+        $product = "Whiteplaid\\" . $property;
+        $object = new $product();
         $object->setSku($sku);
         $object->setName($name);
         $object->setPrice($price);
@@ -41,50 +35,20 @@ class Objects
     {
         $products = null;
         foreach (self::$objects as $value) {
-            $property = $value->property;
-            $product = $this->$property($value);
+            $object = "Whiteplaid\\" . $value->property;
+            $product = new $object;
+            $product->setSku($value->sku);
+            $product->setName($value->name);
+            $product->setPrice($value->price);
+            $product->setSize($value->size);
+            $product->setProperty($value->property);
             $products[$value->sku] = $product;
 
             echo "<td><div class='card ml8 border-r5'>
-            <input type='checkbox' id='dcheck' value='$value->sku' class='delete-checkbox' name='sku[]'>
-            </input>";
+            <input type='checkbox' id='dcheck' value='$value->sku' class='delete-checkbox' name='sku[]'>";
 
             $product->toForm();
         }
         self::$objects = $products;
     }
-
-    private function DVD($value)
-    {
-        $product = new DVD();
-        $product->setSku($value->sku);
-        $product->setName($value->name);
-        $product->setPrice($value->price);
-        $product->setSize($value->size);
-        $product->setProperty($value->property);
-        return $product;
-    }
-
-    private function Book($value)
-    {
-        $product = new Book();
-        $product->setSku($value->sku);
-        $product->setName($value->name);
-        $product->setPrice($value->price);
-        $product->setSize($value->size);
-        $product->setProperty($value->property);
-        return $product;
-    }
-
-    private function Furniture($value)
-    {
-        $product = new Furniture();
-        $product->setSku($value->sku);
-        $product->setName($value->name);
-        $product->setPrice($value->price);
-        $product->setSize($value->size);
-        $product->setProperty($value->property);
-        return $product;
-    }
-
 }
